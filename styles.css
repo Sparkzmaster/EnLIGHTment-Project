@@ -1,17 +1,48 @@
-* {
-  margin:0px;
-  padding:0px;
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
 }
 
-#octocat {
-  display: block;
-  width:384px;
-  margin: 50px auto;
+h1{
+	font-family: Arial,Helvetica Neue,Helvetica,sans-serif; 
+	font-size: 50px;
+	padding: 1em;
 }
 
-p {
-  display: block;
-  width: 400px;
-  margin: 50px auto;
-  font: 30px Monaco,"Courier New","DejaVu Sans Mono","Bitstream Vera Sans Mono",monospace;
+h1:hover{
+	color: yellow;
+	-webkit-transition: 1s;
+	transition: 1s;
+}
+
+header{
+	background-color: #ff0000;
+}
+
+nav{
+	font-family: Arial,Helvetica Neue,Helvetica,sans-serif; 
+	background-color: #999999;
+	padding: 1em;
+}
+
+.MainContent{
+	display: flex;
+}
+
+.Calculate{
+	text-align: left;
+	width: 60%;
+	height: 100vh;
+	padding: 1em;
+	font-family: Arial,Helvetica Neue,Helvetica,sans-serif; 
+}
+
+.Provide{
+	text-align: left;
+	background-color: #ff8080;
+	width: 40%;
+	height: 100vh;
+	padding: 1em;
+	font-family: Arial,Helvetica Neue,Helvetica,sans-serif; 
 }
