@@ -3,6 +3,7 @@ function CalculateEnergy(){
 	var totalKg = totalEnergy * 0.161 * 0.28307;
 	var motorBikes = totalKg * 10;
 	document.getElementById("pBikes").innerHTML = motorBikes + " km.";
+	document.getElementById("CO2").innerHTML = "You may of generated: " + totalKg + " kg CO2e";
 }
 function aSelectFunction(){
 document.getElementById("aMagicSelect").style.display = "none";
