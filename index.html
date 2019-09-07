@@ -3,19 +3,19 @@
 <html>
 
 	<head>
-		<meta name="viewport" content="width=device-width, inital-scale=1.0">		
-		<link rel="stylesheet" type="text/css" href="css/style.css">
+		<meta name="viewport" content="width=device-width, initial-scale=1">		
+		<link rel="stylesheet" type="text/css" href="styles.css">
+		<script src="script.js"> </script>
 	</head>
 
 	<body>
-		<script src="script.js"> </script>
+
 	
 		<header>
 			<h1> <img alt="icon" src="images/light-bulb.png" width="40" height="40"> EnLIGHTment </h1>
 		</header>
 		
 		<nav>
-			Nav stuff
 		</nav>
 		
 		<main class="MainContent">	
@@ -25,23 +25,55 @@
 				<div style="display:inline-block; padding: 1em; background-color: #999999; border-radius: 25px;">
 					
 					How much Energy in KiloWatts per Hour(kW.h) did you use this month in total: 
-					<input type="number" name="energy" id="energytotal" placeholder="Energy" min="0" style="text-align: center; width: 100px; border: none;"> </input>
+					<br><br><input type="number" name="energy" id="energytotal" placeholder="Energy" min="0" style="text-align: center; width: 100px; border: none;" value="660"> </input>
 					<button onclick="CalculateEnergy()"> Submit </button>
+					<br><br>660kWh is an estimate of average monthly household use.
+					
 					
 				</div>
 				
 				<div>
-				
+				<br><br><br><br><br><br>
+					You could of driven a standard motorcycle: <p id="pBikes"></p>
+					<br><br><br><br><br><br><br><br>
+					Data From: <br><br>
+					https://catalogue.data.govt.nz/dataset/energy-statistics/resource/3339d3a7-15bf-4311-82e3-56cbb1fffe72
 				</div>
 				
 			</section>
 			
 			<section class="Provide">
-				Provide.
-			</section>
-		
+				<h2>Options to lower energy / carbon footprint:</h2>
+				<br>
+				<select id="aSelect" onchange="aSelectFunction()">
+				    <option value="aMagicSelect">LED Bulbs</option>
+					<option value="bMagicSelect">Solar Panels</option>
+					<option value="cMagicSelect">Heat Pumps</option>
+					<option value="dMagicSelect">Convention Ovens</option>
+				</select>
+<br><br><br>
+
+<div id="aMagicSelect">
+<img id="aLightBulbPic" alt="icon" src="images/led-lamp.svg" height="30%" width="30%">
+LightBulbs
+</div>
+<div id="bMagicSelect">
+Solar Panels
+</div>
+<div id="cMagicSelect">
+Heat Pumps
+</div>
+<div id="dMagicSelect">
+Convection Ovens
+</div>
+
+</section>
 		</main>
 
 	</body>
 
 </html>
+
+<div>Icons made by 
+<a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a>
+from <a href="https://www.flaticon.com/"title="Flaticon">www.flaticon.com</a></div>
