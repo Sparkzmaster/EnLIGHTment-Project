@@ -19,14 +19,18 @@ h1:hover{
 	transition: 1s;
 }
 
+
 header{
-	background-color: #ff0000;
+	background-color: black;
 }
 
 nav{
-	font-family: Arial,Helvetica Neue,Helvetica,sans-serif; 
-	background-color: #999999;
-	padding: 1em;
+    width: 100%;
+    height: 1em;
+	background-color: grey;
+}
+nav:hover{
+    box-shadow: 20px 20px 300px 15px yellow;
 }
 
 .MainContent{
@@ -35,7 +39,7 @@ nav{
 
 .Calculate{
 	text-align: left;
-	background-image: radial-gradient(gray 6%, white 5%);
+	background-image: radial-gradient(gray 6%, white 9%);
 	overflow-wrap: break-word;
 	background-position: 0 0;
 	background-size: 20px 20px;
@@ -61,6 +65,23 @@ height: 3em;
 #aLightBulbPic{
 	float: right;
 }
+
 #bMagicSelect, #cMagicSelect, #dMagicSelect {
 	display: none;
 }
+
+
+
+@media screen and (max-width: 600px){
+	.MainContent{
+		flex-direction: column;
+}
+	.Calculate{
+		width: 100%;
+	}
+	.Provide{
+		width: 100%;
+	}
+
+}
+
