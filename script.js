@@ -6,7 +6,7 @@ function CalculateEnergy(){
 		var motorBikes = totalKg * 10;
 		
 		document.getElementById("Total").innerHTML = 
-		"With " + totalEnergy + "kWh you could of driven a standard motorcycle "
+		"With " + (totalEnergy).toFixed(2) + "kWh you could of driven a standard motorcycle "
 		+ (motorBikes).toFixed(2) + " km.";
 		
 	} else {
