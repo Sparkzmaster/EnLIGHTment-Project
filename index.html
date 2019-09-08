@@ -2,143 +2,174 @@
 
 <html>
 
-	<head>
-		<meta name="viewport" content="width=device-width, initial-scale=1">		
-		<link rel="stylesheet" type="text/css" href="styles.css">
-		 <link rel="stylesheet" href="w3.css"> 
-		<script src="script.js"> </script>
-	</head>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="css/styles.css">
+<head>
 
-	<body>
-
+<body>
+	<script src="script.js"></script>
 	
-		<header>
-			<h1> <img id="aBulb" alt="icon" src="images/light-bulb.png" width="40" height="40"> EnLIGHTment </h1>
-		</header>
+	<header>
+		<div>
+			<img alt="HomeIcon" src="images/light-bulb.png" width="50" height="50"> 
+			En<span class="light">LIGHT</span>ment
+		</div>
 		
-		<nav>
-		</nav>
-		
-		<main class="MainContent">	
-			
-			<section class="Calculate">
+	</header>
+	
+	<div class="desc"> The Carbon impacts of Electricity & Solutions. </div>
+	
+	<main>
+	
+		<section class="calculator">
+			<div>
+				How much energy did you use this month in KiloWatts per Hour(kWh): 
+				<input type="number" name="EnergySubmit" id="MonthyEnergy" placeholder="Energy." min="0" max="99999" value="660"> </input>
+				<button onclick="CalculateEnergy()"> Submit </button> <br>
+				<span style="padding-bottom: 3.5em;"> An Average household will use an average of 660kWh monthly. </span>
 				
-				<div style="display:inline-block; padding: 1em; background-color: #999999; border-radius: 25px;">
-					
-					How much Energy in KiloWatts per Hour(kW.h) did you use this month in total: 
-					<br><br><input type="number" name="energy" id="energytotal" placeholder="Energy" min="0" style="text-align: center; width: 100px; border: none;" value="660"> </input>
-					<button onclick="CalculateEnergy()"> Submit </button>
-					<br><br>660kWh is an estimate of average monthly household use.
-					<br><br>Did you know: That in 2018 residential electricity consumption was measured at 31.7% of electrical use
-					
-					
+				<div style="padding-left: 0;font-style: italic;"> Did you know. That in 2018 residental electricity consumptionwas measured at 31.7% of electrical use. </div>
+				
+			</div>
+			
+			<div style="background-color: #cc0000; height: 15vh;">
+				<img alt="MotorCycleIcon" src="images/motorbike-side-view.png" width="30" height="30">
+				<span id="Total"> With 660kWh you could of driven a standard motorcycle 289.58061km. <span>
+			</div>
+			
+			<div>
+			
+				Sources of Energy:
+				<br><br>
+				
+				<div class="Shift">
+					// Hydro:
+					<div class="data" style="background-color: #80ccff; width: 60.5%; box-shadow: 2px 2px 10px #80ccff;">
+						60.5%
+					</div>
 				</div>
-
-<div class="w3-container">
- <br>
-  <p id="CO2" style="font-size: 1.3em; color: blue;">You may of generated:</p>
-  <br>
-  <h2>Estimated Generation</h2>
-
-	Hydro 60.5%
-  <div class="w3-light-grey w3-round-xlarge">
-    <div class="w3-container w3-blue w3-round-xlarge" style="width:60.5%; height: 2em"></div>
-  </div>
-  <br>
-  Solar + Wind 4.9%
-    <div class="w3-light-grey w3-round-xlarge">
-    <div class="w3-container w3-blue w3-round-xlarge" style="width:4.9%; height: 2em; "></div>
-  </div>
-  <br>
-  Other renewables 18.3%
-    <div class="w3-light-grey w3-round-xlarge">
-    <div class="w3-container w3-blue w3-round-xlarge" style="width:18.3%; height: 2em"></div>
-  </div>
-  <br>
-  Mixed Gen 16.1%
-      <div class="w3-light-grey w3-round-xlarge">
-    <div class="w3-container w3-red w3-round-xlarge" style="width:16.1%; height: 2em"></div>
-  </div>
-
-</div>
+				
+				<div class="Shift">
+					// Solar:
+					<div class="data" style="background-color: #ffff99; width:15.0%; box-shadow: 2px 2px 10px #ffff99;">
+						15%
+					</div>
+				</div>
+				
+				<div class="Shift">
+					// Renewable Energy:
+					<div class="data"  style="background-color: #99ffd6; width: 20%;  box-shadow: 2px 2px 10px #99ffd6;">
+						20%
+					</div>
+				</div>
+				
+				<div class="Shift">
+					// Other:
+					<div class="data"  style="background-color: #ffb3ff; width: 20%; box-shadow: 2px 2px 10px #ffb3ff;">
+						20%
+					</div>
+				</div>
+				
+			</div>
+			
+			<div style="background-color: #cc0000; padding-bottom: 2em;">
+				Data source: 
+				<br> <a href="https://catalogue.data.govt.nz/dataset/energy-statistics/
+					resource/3339d3a7-15bf-4311-82e3-56cbb1fffe72"> 
+					> Electricity dataset from data.govt.nz </a> 		
+				<br> <a href="https://www.gov.uk/
+					government/uploads/system/uploads/attachment_data/file/715425/
+					Conversion_Factors_2018_-_Condensed_set__for_most_users__v01-01.xls">
+					> Download 2018 conversion factors that are used to calculate. </a>
+				<br><br>
+				Icons made by Freepik from <a href=www.flaticon.com> www.flaticon.com </a>.
+			</div>
+			
+		</section> 
 		
-
+		<section class="suggestion">
+			<div>
+				<span style=" margin-top: 3em;"> Options to decrease your energy/carbon footprint:
+				<select name="PossibleSolution" onchange="DisplayElement()" id="OptionMenu" style="padding: 0.5em; width: 20em;">
+					<option value="InfoLEDBulbs"> LED Bulbs </option>
+					<option value="InfoSolarPanels"> Solar Panels </option>
+					<option value="InfoHeatPumps"> Heat Pumps </option>
+					<option value="InfoConventionalOvens"> Conventional Ovens </option>
+				</select>
+				</span>
+			<div>
+			
+			<div id="InfoLEDBulbs">
+				<br><br>LED LightBulbs:
 				
 				<div>
-				<br><br><br>
-				
-				<img id="aMotorcyclepic" alt="icon" src="images/motorcycle.svg" height="30%" width="30%" style="float: right;">
-					<p><h2 style="font-size: 3em; color: blue;">You could of driven a standard motorcycle:</h2></p>
-					<p id="pBikes" style="font-size: 2em; color: orange; font-weight: bold;"></p>
-					<br><br><br><br><br>
-					<p style="font-size: 2em; text-decoration: underline;">Data From:</p> <br>
-					<button class="w3-button w3-circle w3-teal" onclick="window.location.href = 'https://catalogue.data.govt.nz/dataset/energy-statistics/resource/3339d3a7-15bf-4311-82e3-56cbb1fffe72';">+</button>
-					<button class="w3-button w3-circle w3-teal" style="margin-left:4em " onclick="window.location.href = 'https://www.gov.uk/government/uploads/system/uploads/attachment_data/file/715425/Conversion_Factors_2018_-_Condensed_set__for_most_users__v01-01.xls';">+</button>
-					
-					<br><br><br><br>
+					<br>LEDs are the most efficient and longest-lasting lighting option and good for all general household use. 
+					Whilst they cost a bit more upfront, over their life the energy savings make up for that many times over. 
+					<br> Each LED bulb you buy to replace an incandescent light bulb can save you between $100 and $300 over its life (depending on the wattage of the bulb you replace).
+					<br><br>
 				</div>
 				
-				<div>Icons made by 
-<a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a>
-from <a href="https://www.flaticon.com/"title="Flaticon">www.flaticon.com</a></div>
-		
-			</section>
-			
-			<section class="Provide">
-				<h2>Options to lower energy / carbon footprint:</h2>
 				<br>
-				<select id="aSelect" onchange="aSelectFunction()">
-				    <option value="aMagicSelect">LED Bulbs</option>
-					<option value="bMagicSelect">Solar Panels</option>
-					<option value="cMagicSelect">Heat Pumps</option>
-					<option value="dMagicSelect">Convention Ovens</option>
-				</select>
-<br><br><br>
+				
+				<div>
+					Where to buy Most hardware stores, supermarkets and specialty lighting stores sell LEDs. <br>
+					Source: <a href=https://www.energywise.govt.nz/at-home/lighting/choosing-the-right-energy-efficient-bulb/light-emitting-diodes-leds/> 
+					Energy Wise<a>.
+				</div>	
+			</div>
+			
+			<div id="InfoSolarPanels" class="hide"> <br><br> 
+			
+				Solar Panels: <br><br> 
+				<div> 
+					Solar electricity is silent and unobtrusive, and can be used all around the country. The main barrier to its uptake is cost. 
+					<br><br>
+				</div>
+				
+				<a href="https://www.unison.co.nz/tell-me-about/electricity/solar-energy/your-investment-decision/solar-calculator">Find a solar calculator here</a>
+			
+			</div>
+			
+			<div id="InfoHeatPumps" class="hide">
+				
+				<div>
+					<br><br>Types of heat pump: <br><br>
+				</div>
+				
+				<div>Single-split systems are the most common heat pumps in New Zealand - they are air-to-air, 
+				with one indoor unit connected to an outdoor unit. These systems are designed to heat just the room that they are installed in,
+				not the whole house. While leaving internal doors open may allow some of the heated air to travel into other rooms,
+				in most houses this does not work very well, particularly if there is a hallway in between,
+				if there are high ceilings or if the house needs a lot of heating.
+				</div> <br>
+				
+				<div>Multi-split heat pumps are designed to heat multiple rooms -
+				and consist of one outdoor unit serving multiple indoor units installed in different rooms of the house.
+				</div> <br>
+				
+				<div>Ducted heat pumps provide central heating - by blowing heated air through ducts into multiple rooms of a house.
+				While some can only be controlled centrally, others allow you to choose which rooms or groups of rooms you want to be heated at any given time (zoning).
+				For example, you may only want to have your bedrooms heated overnight.
+				</div> <br><br>
 
-<div id="aMagicSelect">
-<img id="aLightBulbPic" alt="icon" src="images/led-lamp.svg" height="30%" width="30%">
-LEDs are the most efficient and longest-lasting lighting option and good for all general household use. Whilst they cost a bit more upfront, over their life the energy savings make up for that many times over. Each LED bulb you buy to replace an incandescent light bulb can save you between $100 and $300 over its life (depending on the wattage of the bulb you replace).
-<br><br>
-<h2>Where to buy</h2>
-Most hardware stores, supermarkets and specialty lighting stores sell LEDs.
-I also recommend to search through: <button class="w3-button w3-circle w3-teal" onclick="window.location.href = 'https://pricespy.co.nz/category.php?k=v1930';">+</button> 
-<br><br>Source: <br>https://www.energywise.govt.nz/at-home/lighting/choosing-the-right-energy-efficient-bulb/light-emitting-diodes-leds/
-</div>
-<div id="bMagicSelect">
-Solar electricity is silent and unobtrusive, and can be used all around the country. The main barrier to its uptake is cost.
-<br><br><br><p>Find a solar calculator here:</p>
-<button class="w3-button w3-circle w3-teal" onclick="window.location.href = 'https://www.unison.co.nz/tell-me-about/electricity/solar-energy/your-investment-decision/solar-calculator';">+</button>
+				<a href="https://www.energywise.govt.nz/tools/rightware/#!/">Check out models energy rating here </a> <br><br>
+				<a href="https://www.energywise.govt.nz/at-home/heating-and-cooling/types-of-heater/heat-pumps"> NZ also has heating and insulation subsidies check out if you can get it here </a>
+				<br><br> <a href="https://www.energywise.govt.nz/at-home/heating-and-cooling/types-of-heater/heat-pumps/"> Source</a>.
+				
+			</div>
+			
+			<div id="InfoConventionalOvens" class="hide">
+				<br><br>Convection ovens also make a difference. The heated air is continuously circulated which reduces cook times as well as the temperatures required.
+				On average you'll use 20% less energy a month running your convection oven, as compared to a standard oven.
+				<br><br> <a href="https://www.energy.gov/energysaver/articles/cooking-some-energy-saving-tips"> Source </a>.
+			</div>
+			
+	
+		</section>
+		
+	</main>
 
-</div>
-<div id="cMagicSelect">
-<h2>Types of heat pump:</h2>
-Single-split systems are the most common heat pumps in New Zealand - they are air-to-air, with one indoor unit connected to an outdoor unit. These systems are designed to heat just the room that they are installed in, not the whole house. While leaving internal doors open may allow some of the heated air to travel into other rooms, in most houses this does not work very well, particularly if there is a hallway in between, if there are high ceilings or if the house needs a lot of heating.
-Multi-split heat pumps are designed to heat multiple rooms - and consist of one outdoor unit serving multiple indoor units installed in different rooms of the house.
-Ducted heat pumps provide central heating - by blowing heated air through ducts into multiple rooms of a house. While some can only be controlled centrally, others allow you to choose which rooms or groups of rooms you want to be heated at any given time (zoning). For example, you may only want to have your bedrooms heated overnight.
-<br><br>Check out models energy rating here:<br>
-<button class="w3-button w3-circle w3-teal" onclick="window.location.href = 'https://www.energywise.govt.nz/tools/rightware/#!/';">+</button>
-
-<br><br>NZ also has heating and insulation subsidies check out if you can get it here:<br>
-<button class="w3-button w3-circle w3-teal" onclick="window.location.href = 'https://www.energywise.govt.nz/funding-and-support/funding-for-heaters-and-insulation/warmer-kiwi-homes/';">+</button>
-
-<br><br>Source: 
-<br>https://www.energywise.govt.nz/at-home/heating-and-cooling/types-of-heater/heat-pumps/
-</div>
-<div id="dMagicSelect">
-Convection ovens also make a difference. The heated air is continuously circulated which reduces cook times as well as the temperatures required. On average you'll use 20% less energy a month running your convection oven, as compared to a standard oven.
-<br><br>
-Source:
-<br><br>
-https://www.energy.gov/energysaver/articles/cooking-some-energy-saving-tips
-</div>
-
-</section>
-
-
-</main>
-
-	</body>
-
+</body>
+	
 </html>
-
-
