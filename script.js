@@ -5,9 +5,12 @@ function CalculateEnergy(){
 		var totalKg = totalEnergy * 0.155 * 0.28307;
 		var motorBikes = totalKg * 10;
 		
+		var a = totalEnergy.toFixed(2);
+		var b = motorBikes.toFixed(2);
+		
 		document.getElementById("Total").innerHTML = 
-		"With " + (totalEnergy).toFixed(2) + "kWh you could of driven a standard motorcycle "
-		+ (motorBikes).toFixed(2) + " km.";
+		"With " + a + "kWh you could of driven a standard motorcycle "
+		+ b + " km.";
 		
 	} else {
 		console.log("This is a negative number.");
