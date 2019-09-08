@@ -1,17 +1,28 @@
 function CalculateEnergy(){
-	var totalEnergy = document.getElementById("energytotal").value;
-	var totalKg = totalEnergy * 0.161 * 0.28307;
-	var motorBikes = totalKg * 10;
-	document.getElementById("pBikes").innerHTML = motorBikes + " km.";
-	document.getElementById("CO2").innerHTML = "You may of generated: " + totalKg + " kg CO2e";
+	var totalEnergy = document.getElementById("MonthyEnergy").value;
+	
+	if (1 <= totalEnergy && totalEnergy <= 99999){
+		var totalKg = totalEnergy * 0.155 * 0.28307;
+		var motorBikes = totalKg * 10;
+		
+		document.getElementById("Total").innerHTML = 
+		"With " + totalEnergy + "kWh you could of driven a standard motorcycle "
+		+ motorBikes + "km.";
+		
+	} else {
+		console.log("This is a negative number.");
+		
+	}
 }
-function aSelectFunction(){
-document.getElementById("aMagicSelect").style.display = "none";
-document.getElementById("bMagicSelect").style.display = "none";
-document.getElementById("cMagicSelect").style.display = "none";
-document.getElementById("dMagicSelect").style.display = "none";
 
-text = document.getElementById("aSelect").value;
-document.getElementById(text).style.display = "block";
 
+
+function DisplayElement(){
+	document.getElementById("InfoLEDBulbs").style.display = "none";
+	document.getElementById("InfoSolarPanels").style.display = "none";
+	document.getElementById("InfoHeatPumps").style.display = "none";
+	document.getElementById("InfoConventionalOvens").style.display = "none";
+	
+	text = document.getElementById("OptionMenu").value;
+	document.getElementById(text).style.display = "block";
 }
