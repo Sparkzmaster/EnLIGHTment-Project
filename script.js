@@ -7,7 +7,7 @@ function CalculateEnergy(){
 		
 		document.getElementById("Total").innerHTML = 
 		"With " + totalEnergy + "kWh you could of driven a standard motorcycle "
-		+ motorBikes + "km.";
+		+ (motorBikes).toFixed(2) + " km.";
 		
 	} else {
 		console.log("This is a negative number.");
