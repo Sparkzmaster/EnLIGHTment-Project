@@ -5,7 +5,8 @@ function CalculateEnergy(){
 		var totalKg = totalEnergy * 0.155 * 0.28307;
 		var motorBikes = totalKg * 10;
 		
-		var a = totalEnergy.toFixed(2);
+		var x = parseInt(totalEnergy);
+		var a = x.toFixed(2);
 		var b = motorBikes.toFixed(2);
 		
 		document.getElementById("Total").innerHTML = 
